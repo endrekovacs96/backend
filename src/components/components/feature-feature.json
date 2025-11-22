@@ -18,6 +18,16 @@
         "CHECK_ICON",
         "CLOUD_ICON"
       ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   },
   "config": {}

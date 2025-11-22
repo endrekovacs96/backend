@@ -20,10 +20,10 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "layout.hero-section",
         "layout.features-section",
         "shared.slider",
-        "shared.rich-text"
+        "shared.rich-text",
+        "layout.hero-slider"
       ]
     }
   }

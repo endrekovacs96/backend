@@ -10,6 +10,10 @@ export interface ComponentsFeatureFeature extends Struct.ComponentSchema {
     icon: Schema.Attribute.Enumeration<
       ['CLOCK_ICON', 'CHECK_ICON', 'CLOUD_ICON']
     >;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     subHeading: Schema.Attribute.Text;
   };
 }
@@ -71,6 +75,16 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'components.link', false>;
     subHeading: Schema.Attribute.Text;
+  };
+}
+
+export interface LayoutHeroSlider extends Struct.ComponentSchema {
+  collectionName: 'components_layout_hero_sliders';
+  info: {
+    displayName: 'Hero Slider';
+  };
+  attributes: {
+    slides: Schema.Attribute.Component<'layout.hero-section', true>;
   };
 }
 
@@ -145,6 +159,7 @@ declare module '@strapi/strapi' {
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
       'layout.hero-section': LayoutHeroSection;
+      'layout.hero-slider': LayoutHeroSlider;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
