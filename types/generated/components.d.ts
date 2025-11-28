@@ -1,5 +1,52 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComponentsContactFormBlock extends Struct.ComponentSchema {
+  collectionName: 'components_components_contact_form_blocks';
+  info: {
+    displayName: 'ContactForm';
+  };
+  attributes: {
+    fields: Schema.Attribute.Component<'components.form-field', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsContactInfoBlock extends Struct.ComponentSchema {
+  collectionName: 'components_components_contact_info_blocks';
+  info: {
+    displayName: 'ContactInfo';
+  };
+  attributes: {
+    contacts: Schema.Attribute.Component<'components.contact-item', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsContactItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_contact_items';
+  info: {
+    displayName: 'ContactItem';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_components_feature_cards';
+  info: {
+    displayName: 'Feature Card';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'files' | 'images'>;
+    items: Schema.Attribute.Component<'components.items', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsFeatureFeature extends Struct.ComponentSchema {
   collectionName: 'components_components_feature_features';
   info: {
@@ -18,6 +65,95 @@ export interface ComponentsFeatureFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsFormField extends Struct.ComponentSchema {
+  collectionName: 'components_components_form_fields';
+  info: {
+    displayName: 'FormField';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String;
+    required: Schema.Attribute.Boolean;
+    type: Schema.Attribute.Enumeration<
+      [
+        'button',
+        'checkbox',
+        'color',
+        'date',
+        'datetime-local',
+        'email',
+        'file',
+        'hidden',
+        'image',
+        'month',
+        'number',
+        'password',
+        'radio',
+        'range',
+        'reset',
+        'search',
+        'submit',
+        'tel',
+        'text',
+        'time',
+        'url',
+        'week',
+        'textarea',
+      ]
+    >;
+  };
+}
+
+export interface ComponentsHouseFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_components_house_features';
+  info: {
+    displayName: 'house-features';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsIcon extends Struct.ComponentSchema {
+  collectionName: 'components_components_icons';
+  info: {
+    displayName: 'icon';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsItems extends Struct.ComponentSchema {
+  collectionName: 'components_components_items';
+  info: {
+    displayName: 'item';
+  };
+  attributes: {
+    itemDescription: Schema.Attribute.Text;
+    itemTitle: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsKepSzoeveg extends Struct.ComponentSchema {
+  collectionName: 'components_components_kep_szoevegs';
+  info: {
+    displayName: 'K\u00E9p + Sz\u00F6veg';
+    icon: 'picture';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    text: Schema.Attribute.Blocks;
+    textPosition: Schema.Attribute.Enumeration<['LEFT', 'RIGHT']>;
+  };
+}
+
 export interface ComponentsLink extends Struct.ComponentSchema {
   collectionName: 'components_components_links';
   info: {
@@ -27,6 +163,33 @@ export interface ComponentsLink extends Struct.ComponentSchema {
     href: Schema.Attribute.String;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsMenuItem extends Struct.ComponentSchema {
+  collectionName: 'components_components_menu_items';
+  info: {
+    displayName: 'MenuItem';
+  };
+  attributes: {
+    externalUrl: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
+  };
+}
+
+export interface ComponentsSeo extends Struct.ComponentSchema {
+  collectionName: 'components_components_seos';
+  info: {
+    displayName: 'SEO';
+  };
+  attributes: {
+    keywords: Schema.Attribute.String;
+    metaDescription: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String;
+    shareImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -51,6 +214,28 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     logoText: Schema.Attribute.Component<'components.link', false>;
     socialLink: Schema.Attribute.Component<'components.link', true>;
     text: Schema.Attribute.Text;
+  };
+}
+
+export interface LayoutGaleriaSzekcio extends Struct.ComponentSchema {
+  collectionName: 'components_layout_galeria_szekcio';
+  info: {
+    displayName: 'Gal\u00E9ria szekci\u00F3';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<'images' | 'files', true>;
+  };
+}
+
+export interface LayoutGeneralkivitelezes extends Struct.ComponentSchema {
+  collectionName: 'components_layout_generalkivitelezes';
+  info: {
+    displayName: 'Gener\u00E1lkivitelez\u00E9s';
+  };
+  attributes: {
+    icons: Schema.Attribute.Component<'components.icon', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -85,6 +270,27 @@ export interface LayoutHeroSlider extends Struct.ComponentSchema {
   };
   attributes: {
     slides: Schema.Attribute.Component<'layout.hero-section', true>;
+  };
+}
+
+export interface LayoutHomePageFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_layout_home_page_features';
+  info: {
+    displayName: 'Home Page Features';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'components.feature-card', true>;
+  };
+}
+
+export interface LayoutKapcsolatSzekcio extends Struct.ComponentSchema {
+  collectionName: 'components_layout_kapcsolat_szekcio';
+  info: {
+    displayName: 'Kapcsolat szekci\u00F3';
+  };
+  attributes: {
+    contact: Schema.Attribute.Component<'components.contact-info-block', false>;
+    form: Schema.Attribute.Component<'components.contact-form-block', false>;
   };
 }
 
@@ -153,13 +359,28 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'components.contact-form-block': ComponentsContactFormBlock;
+      'components.contact-info-block': ComponentsContactInfoBlock;
+      'components.contact-item': ComponentsContactItem;
+      'components.feature-card': ComponentsFeatureCard;
       'components.feature-feature': ComponentsFeatureFeature;
+      'components.form-field': ComponentsFormField;
+      'components.house-features': ComponentsHouseFeatures;
+      'components.icon': ComponentsIcon;
+      'components.items': ComponentsItems;
+      'components.kep-szoeveg': ComponentsKepSzoeveg;
       'components.link': ComponentsLink;
+      'components.menu-item': ComponentsMenuItem;
+      'components.seo': ComponentsSeo;
       'layout.features-section': LayoutFeaturesSection;
       'layout.footer': LayoutFooter;
+      'layout.galeria-szekcio': LayoutGaleriaSzekcio;
+      'layout.generalkivitelezes': LayoutGeneralkivitelezes;
       'layout.header': LayoutHeader;
       'layout.hero-section': LayoutHeroSection;
       'layout.hero-slider': LayoutHeroSlider;
+      'layout.home-page-features': LayoutHomePageFeatures;
+      'layout.kapcsolat-szekcio': LayoutKapcsolatSzekcio;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

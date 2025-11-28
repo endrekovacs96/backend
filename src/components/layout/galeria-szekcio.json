@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_galeria_szekcio",
+  "info": {
+    "displayName": "Galéria szekció"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

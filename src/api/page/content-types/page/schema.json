@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "title": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "components.seo",
+      "repeatable": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.kapcsolat-szekcio",
+        "layout.home-page-features",
+        "layout.hero-slider",
+        "layout.hero-section",
+        "layout.header",
+        "layout.generalkivitelezes",
+        "layout.galeria-szekcio",
+        "layout.footer",
+        "layout.features-section",
+        "shared.slider",
+        "shared.seo",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media"
+      ]
+    }
+  }
+}

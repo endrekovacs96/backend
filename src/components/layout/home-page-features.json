@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_home_page_features",
+  "info": {
+    "displayName": "Home Page Features"
+  },
+  "options": {},
+  "attributes": {
+    "features": {
+      "type": "component",
+      "component": "components.feature-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

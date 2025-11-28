@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_kep_szoevegs",
+  "info": {
+    "displayName": "Kép + Szöveg",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "textPosition": {
+      "type": "enumeration",
+      "enum": [
+        "LEFT",
+        "RIGHT"
+      ]
+    }
+  },
+  "config": {}
+}

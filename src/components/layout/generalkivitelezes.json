@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_generalkivitelezes",
+  "info": {
+    "displayName": "Generálkivitelezés"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icons": {
+      "type": "component",
+      "component": "components.icon",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

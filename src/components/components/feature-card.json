@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_components_feature_cards",
+  "info": {
+    "displayName": "Feature Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "components.items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

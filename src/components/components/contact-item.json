@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_components_contact_items",
+  "info": {
+    "displayName": "ContactItem"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

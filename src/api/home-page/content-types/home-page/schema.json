@@ -23,7 +23,12 @@
         "layout.features-section",
         "shared.slider",
         "shared.rich-text",
-        "layout.hero-slider"
+        "layout.hero-slider",
+        "components.kep-szoeveg",
+        "layout.home-page-features",
+        "layout.generalkivitelezes",
+        "layout.galeria-szekcio",
+        "layout.kapcsolat-szekcio"
       ]
     }
   }
