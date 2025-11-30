@@ -17,9 +17,6 @@
     },
     "label": {
       "type": "string"
-    },
-    "value": {
-      "type": "string"
     }
   },
   "config": {}

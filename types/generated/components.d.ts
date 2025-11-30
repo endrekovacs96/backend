@@ -115,7 +115,17 @@ export interface ComponentsHouseFeatures extends Struct.ComponentSchema {
       true
     >;
     label: Schema.Attribute.String;
-    value: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsHouseTypeMainFeatures
+  extends Struct.ComponentSchema {
+  collectionName: 'components_components_house_type_main_features';
+  info: {
+    displayName: 'houseTypeMainFeatures';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
   };
 }
 
@@ -225,6 +235,7 @@ export interface LayoutGaleriaSzekcio extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     images: Schema.Attribute.Media<'images' | 'files', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -291,6 +302,18 @@ export interface LayoutKapcsolatSzekcio extends Struct.ComponentSchema {
   attributes: {
     contact: Schema.Attribute.Component<'components.contact-info-block', false>;
     form: Schema.Attribute.Component<'components.contact-form-block', false>;
+  };
+}
+
+export interface LayoutMiertVeluenkEpitsen extends Struct.ComponentSchema {
+  collectionName: 'components_layout_miert_veluenk_epitsens';
+  info: {
+    displayName: 'Mi\u00E9rt vel\u00FCnk \u00E9p\u00EDtsen';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<'components.items', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -366,6 +389,7 @@ declare module '@strapi/strapi' {
       'components.feature-feature': ComponentsFeatureFeature;
       'components.form-field': ComponentsFormField;
       'components.house-features': ComponentsHouseFeatures;
+      'components.house-type-main-features': ComponentsHouseTypeMainFeatures;
       'components.icon': ComponentsIcon;
       'components.items': ComponentsItems;
       'components.kep-szoeveg': ComponentsKepSzoeveg;
@@ -381,6 +405,7 @@ declare module '@strapi/strapi' {
       'layout.hero-slider': LayoutHeroSlider;
       'layout.home-page-features': LayoutHomePageFeatures;
       'layout.kapcsolat-szekcio': LayoutKapcsolatSzekcio;
+      'layout.miert-veluenk-epitsen': LayoutMiertVeluenkEpitsen;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

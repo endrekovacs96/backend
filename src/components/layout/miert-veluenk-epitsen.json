@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_miert_veluenk_epitsens",
+  "info": {
+    "displayName": "Miért velünk építsen"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "component": "components.items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

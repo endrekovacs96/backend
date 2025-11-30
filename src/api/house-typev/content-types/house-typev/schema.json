@@ -4,7 +4,7 @@
   "info": {
     "singularName": "house-typev",
     "pluralName": "house-typevs",
-    "displayName": "house-type"
+    "displayName": "house-types"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +15,7 @@
       "type": "string"
     },
     "floor_area": {
-      "type": "decimal"
+      "type": "string"
     },
     "price": {
       "type": "string"
@@ -35,6 +35,17 @@
         "images",
         "files"
       ]
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "house_types"
+    },
+    "mainFeatures": {
+      "type": "component",
+      "component": "components.house-type-main-features",
+      "repeatable": true
     }
   }
 }

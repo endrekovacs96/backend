@@ -11,12 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "title": {
-      "type": "string"
     },
     "seo": {
       "type": "component",
@@ -41,6 +41,12 @@
         "shared.quote",
         "shared.media"
       ]
+    },
+    "house_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::house-typev.house-typev",
+      "mappedBy": "page"
     }
   }
 }

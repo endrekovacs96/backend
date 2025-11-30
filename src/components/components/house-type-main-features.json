@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_house_type_main_features",
+  "info": {
+    "displayName": "houseTypeMainFeatures"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -602,7 +602,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
-    displayName: 'Home-pages';
+    displayName: 'Home-page';
     pluralName: 'home-pages';
     singularName: 'home-page';
   };
@@ -621,6 +621,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'layout.generalkivitelezes',
         'layout.galeria-szekcio',
         'layout.kapcsolat-szekcio',
+        'layout.miert-veluenk-epitsen',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -644,7 +645,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiHouseTypevHouseTypev extends Struct.CollectionTypeSchema {
   collectionName: 'house_typevs';
   info: {
-    displayName: 'house-type';
+    displayName: 'house-types';
     pluralName: 'house-typevs';
     singularName: 'house-typev';
   };
@@ -657,7 +658,7 @@ export interface ApiHouseTypevHouseTypev extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'components.house-features', true>;
-    floor_area: Schema.Attribute.Decimal;
+    floor_area: Schema.Attribute.String;
     gallery: Schema.Attribute.Media<'images' | 'files', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -665,7 +666,12 @@ export interface ApiHouseTypevHouseTypev extends Struct.CollectionTypeSchema {
       'api::house-typev.house-typev'
     > &
       Schema.Attribute.Private;
+    mainFeatures: Schema.Attribute.Component<
+      'components.house-type-main-features',
+      true
+    >;
     name: Schema.Attribute.String;
+    page: Schema.Attribute.Relation<'manyToOne', 'api::page.page'>;
     price: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -674,7 +680,7 @@ export interface ApiHouseTypevHouseTypev extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
+export interface ApiMenuMenu extends Struct.SingleTypeSchema {
   collectionName: 'menus';
   info: {
     displayName: 'Menu';
@@ -732,6 +738,10 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    house_types: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::house-typev.house-typev'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
