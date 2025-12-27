@@ -3,7 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ComponentsContactFormBlock extends Struct.ComponentSchema {
   collectionName: 'components_components_contact_form_blocks';
   info: {
-    displayName: 'ContactForm';
+    displayName: 'Kapcsolat \u0171rlap';
   };
   attributes: {
     fields: Schema.Attribute.Component<'components.form-field', true>;
@@ -68,7 +68,7 @@ export interface ComponentsFeatureFeature extends Struct.ComponentSchema {
 export interface ComponentsFormField extends Struct.ComponentSchema {
   collectionName: 'components_components_form_fields';
   info: {
-    displayName: 'FormField';
+    displayName: 'Mez\u0151';
   };
   attributes: {
     name: Schema.Attribute.String;
@@ -179,7 +179,7 @@ export interface ComponentsLink extends Struct.ComponentSchema {
 export interface ComponentsMenuItem extends Struct.ComponentSchema {
   collectionName: 'components_components_menu_items';
   info: {
-    displayName: 'MenuItem';
+    displayName: 'Men\u00FC elem';
   };
   attributes: {
     externalUrl: Schema.Attribute.String;
@@ -253,7 +253,7 @@ export interface LayoutGeneralkivitelezes extends Struct.ComponentSchema {
 export interface LayoutHeader extends Struct.ComponentSchema {
   collectionName: 'components_layout_headers';
   info: {
-    displayName: 'Header';
+    displayName: 'Fejl\u00E9c';
   };
   attributes: {
     ctaButton: Schema.Attribute.Component<'components.link', false>;
@@ -287,7 +287,7 @@ export interface LayoutHeroSlider extends Struct.ComponentSchema {
 export interface LayoutHomePageFeatures extends Struct.ComponentSchema {
   collectionName: 'components_layout_home_page_features';
   info: {
-    displayName: 'Home Page Features';
+    displayName: 'F\u0151oldali szolg\u00E1ltat\u00E1sok';
   };
   attributes: {
     features: Schema.Attribute.Component<'components.feature-card', true>;
@@ -302,6 +302,21 @@ export interface LayoutKapcsolatSzekcio extends Struct.ComponentSchema {
   attributes: {
     contact: Schema.Attribute.Component<'components.contact-info-block', false>;
     form: Schema.Attribute.Component<'components.contact-form-block', false>;
+  };
+}
+
+export interface LayoutKiemeltTipushazak extends Struct.ComponentSchema {
+  collectionName: 'components_layout_kiemelt_tipushazaks';
+  info: {
+    displayName: 'Kiemelt T\u00EDpush\u00E1zak';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    house_types: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::house-typev.house-typev'
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -405,6 +420,7 @@ declare module '@strapi/strapi' {
       'layout.hero-slider': LayoutHeroSlider;
       'layout.home-page-features': LayoutHomePageFeatures;
       'layout.kapcsolat-szekcio': LayoutKapcsolatSzekcio;
+      'layout.kiemelt-tipushazak': LayoutKiemeltTipushazak;
       'layout.miert-veluenk-epitsen': LayoutMiertVeluenkEpitsen;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "Page"
+    "displayName": "Oldalak"
   },
   "options": {
     "draftAndPublish": true
@@ -39,7 +39,8 @@
         "shared.seo",
         "shared.rich-text",
         "shared.quote",
-        "shared.media"
+        "shared.media",
+        "components.kep-szoeveg"
       ]
     },
     "house_types": {

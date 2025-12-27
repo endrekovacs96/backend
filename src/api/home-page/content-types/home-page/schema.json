@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Home-page"
+    "displayName": "Főoldal"
   },
   "options": {
     "draftAndPublish": false
@@ -29,7 +29,8 @@
         "layout.generalkivitelezes",
         "layout.galeria-szekcio",
         "layout.kapcsolat-szekcio",
-        "layout.miert-veluenk-epitsen"
+        "layout.miert-veluenk-epitsen",
+        "layout.kiemelt-tipushazak"
       ]
     }
   }

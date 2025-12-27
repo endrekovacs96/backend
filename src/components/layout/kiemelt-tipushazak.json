@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_kiemelt_tipushazaks",
+  "info": {
+    "displayName": "Kiemelt Típusházak"
+  },
+  "options": {},
+  "attributes": {
+    "house_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::house-typev.house-typev"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
